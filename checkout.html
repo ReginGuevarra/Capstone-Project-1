@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      body.center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 20px;
+        margin-left: 30%;
+        background-color: rgba(0, 0, 0, 0.524);
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ccc;
+      }
+
+      th {
+        background-color: #c51a1a;
+      }
+
+      form {
+        width: 80%;
+        margin-left: 38%;
+        margin-top: 5px;
+        color: white;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 30%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 11%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #00ffee;
+      }
+
+      h1 {
+        color: rgb(255, 255, 255);
+        font-size: 50px;
+      }
+
+      h2 {
+        color: white;
+        text-align: center;
+      }
+    </style>
+    <title>Checkout Page</title>
+  </head>
+  <body>
+    <h1>Checkout Page</h1>
+    <h2>Cart Items</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jordan 1 Retro High (size 10) Off-White University Blue </td>
+          <td>1</td>
+          <td>$2,000</td>
+        </tr>
+        <tr>
+          <td>Jordan 4 Retro (size 10) Travis Scott Cactus Jack </td>
+          <td>1</td>
+          <td>$1,000</td>
+        </tr>
+        <tr>
+          <td>adidas Yeezy Boost 350 (size 10) Pirate Black (2015) </td>
+          <td>1</td>
+          <td>$1,000</td>
+        </tr>
+        <tr>
+          <td>Total amount</td>
+          <td>3</td>
+          <td>$4,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Purchaser Information</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required minlength="2" maxlength="100">
+      <br>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required minlength="10" maxlength="100">
+      <br>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required minlength="2" maxlength="50">
+      <br>
+      <label for="state">State:</label>
+      <select id="state" name="state" required>
+        <option value="">--Select--</option>
+        <option value="AZ">Arizona</option>
+        <option value="CA">California</option>
+        <option value="FL">Florida</option>
+        <option value="NV">Nevada</option>
+        <option value="NY">New York</option>
+        <option value="OR">Oregon</option>
+        <option value="TX">Texas</option>
+      </select>
+      <br>
+      <label for="zip">Zip Code:</label>
+      <input type="text" id="zip" name="zip" required pattern="[0-9]{5}">
+      <br>
+      <fieldset>
+        <legend>Payment Information</legend>
+        <label for="cardtype">Card Type:</label>
+        <select id="cardtype" name="cardtype" required>
+          <option value="">--Select--</option>
+          <option value="visa">Visa</option>
+          <option value="mastercard">Mastercard</option>
+          <option value="amex">American Express</option>
+          <option value="discover">Discover</option>
+        </select>
+        <br>
+        <label for="cardnumber">Card Number:</label>
+        <input type="text" id="cardnumber" name="cardnumber" required pattern="[0-9]{13,16}">
+        <br>
+        <label for="expmonth">Expiration Month:</label>
+        <input type="number" id="expmonth" name="expmonth" required min="1" max="12">
+        <br>
+        <label for="expyear">Expiration Year:</label>
+        <input type="number" id="expyear" name="expyear" required min="2023" max="2050">
+        <br>
+        <label for="securitycode">Security Code:</label>
+        <input type="text" id="securitycode" name="securitycode" required pattern="[0-9]{3,4}">
+        <br>
+      </fieldset>
+      <input type="submit" value="Submit">
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

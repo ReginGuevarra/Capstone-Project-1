@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assist Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        background-image: url('https://wallpaper.dog/large/20482074.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      form {
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.524);
+        margin: auto;
+        color: white;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #00ba54;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-left: 38%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #00ffdd;
+      }
+
+      .error {
+        color: red;
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 50px;
+        color: white;
+      }
+
+      h2 {
+        font-size: 25px;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" action="process-login.php">
+      <h1>Welcome Sneaker Collector!</h1>
+      <h2>Please Login</h2> <?php if(isset($error)): ?> <div class="error"> <?php echo $error; ?> </div> <?php endif; ?> <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required pattern="[A-Za-z0-9]+">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required pattern=".{8,}">
+      <label>
+        <input type="checkbox" name="remember-me" value="1"> Remember me </label>
+      <input type="submit" value="Login">
+      <p>
+        <a href="#">Forgot Password?</a>
+      </p>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
